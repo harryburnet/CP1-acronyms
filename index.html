@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP1 Acronym Trainer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 10px; }
+    h1 { text-align: center; }
+    .btn { padding: 12px 18px; background: #0078d4; color: white; border: none; cursor: pointer; border-radius: 6px; font-size: 16px; }
+    .btn:hover { background: #005fa3; }
+    .acronym-letter {
+        display: inline-block;
+        padding: 12px;
+        margin: 6px;
+        background: #eee;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 18px;
+    }
+    .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<h1>CP1 Acronym Trainer</h1>
+
+<div id="topic"></div>
+
+<button class="btn" onclick="nextCard()">Next Topic</button>
+
+<div id="acronym" class="hidden"></div>
+
+<div id="letters"></div>
+
+<script>
+const acronyms = [
+
+    { topic: "External Environment", acronym: "CREATE GRAND LISTS", letters: {
+        C:"Corporate structure", R:"Regulations and legislation", E:"Environmental issues and climate change",
+        A:"Accounting standards", T:"Tax", E2:"Economic outlook",
+        G:"Governance", R2:"Risk management requirements", A2:"Adequacy of capital and solvency",
+        N:"New business environment", D:"Demographic trends",
+        L:"Lifestyle considerations", I:"International practice",
+        S:"State benefits", T2:"Technology", S2:"Social and cultural trends"
+    }},
+
+    { topic: "Aims of a regulator", acronym: "GRIP", letters: {
+        G:"Give confidence in the system", R:"Reduce financial crime",
+        I:"Inefficiencies in the market corrected", P:"Protect consumers"
+    }},
+
+    { topic: "Functions of a regulator", acronym: "SERVICE", letters: {
+        S:"Setting sanctions", E:"Enforcing regulations", R:"Reviewing and influencing government policy",
+        V:"Vetting and registering firms and individuals", I:"Investigating breaches",
+        C:"Checking prudent management and conduct of providers", E2:"Educating consumers and the public"
+    }},
+
+    { topic: "Life Insurance Products", acronym: "WEL RIDD", letters: {
+        W:"Whole of Life Insurance", E:"Endowment Assurance", L:"Level Term Assurance",
+        R:"Renewable / Convertible Term Assurance", I:"Immediate Annuity",
+        D:"Deferred Annuity", D2:"Decreasing Term Assurance"
+    }},
+
+    { topic: "Features of General Assets", acronym: "SYSTEM T", letters: {
+        S:"Security", Y:"Yield", S2:"Spread", T:"Term", E:"Expenses / exchange rate",
+        M:"Marketability", T2:"Tax"
+    }},
+
+    { topic: "Features of the investor", acronym: "TRAITOR", letters: {
+        T:"Tax position", R:"Regulation on investor", A:"Assets currently held",
+        I:"Income / cashflow considerations", T2:"Tastes", O:"Other assets and investors",
+        R2:"Risk appetite"
+    }},
+
+    { topic: "Reasons for holding cash", acronym: "POURS GRID", letters: {
+        P:"Protect monetary values", O:"Opportunities", U:"Uncertain liabilities
