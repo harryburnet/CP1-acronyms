@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP1 Acronym Trainer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 10px; }
+    h1 { text-align: center; }
+    .btn { padding: 12px 18px; background: #0078d4; color: white; border: none; cursor: pointer; border-radius: 6px; font-size: 16px; }
+    .btn:hover { background: #005fa3; }
+    .acronym-letter {
+        display: inline-block;
+        padding: 12px;
+        margin: 6px;
+        background: #eee;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 18px;
+    }
+    .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<h1>CP1 Acronym Trainer</h1>
+
+<div id="topic"></div>
+
+<button class="btn" onclick="nextCard()">Next Topic</button>
+
+<div id="acronym" class="hidden"></div>
+
+<div id="letters"></div>
+
+<script>
+const acronyms = [
+
+    { topic: "External Environment", acronym: "CREATE GRAND LISTS", letters: {
+        C:"Corporate structure", R:"Regulations and legislation", E:"Environmental issues and climate change",
+        A:"Accounting standards", T:"Tax", E2:"Economic outlook",
+        G:"Governance", R2:"Risk management requirements", A2:"Adequacy of capital and solvency",
+        N:"New business environment", D:"Demographic trends",
+        L:"Lifestyle considerations", I:"International practice",
+        S:"State benefits", T2:"Technology", S2:"Social and cultural trends"
+    }},
+
+    { topic: "Aims of a regulator", acronym: "GRIP", letters: {
+        G:"Give confidence in the system", R:"Reduce financial crime",
+        I:"Inefficiencies in the market corrected", P:"Protect consumers"
+    }},
+
+    { topic: "Functions of a regulator", acronym: "SERVICE", letters: {
+        S:"Setting sanctions", E:"Enforcing regulations", R:"Reviewing and influencing government policy",
+        V:"Vetting and registering firms and individuals", I:"Investigating breaches",
+        C:"Checking prudent management and conduct of providers", E2:"Educating consumers and the public"
+    }},
+
+    { topic: "Life Insurance Products", acronym: "WEL RIDD", letters: {
+        W:"Whole of Life Insurance", E:"Endowment Assurance", L:"Level Term Assurance",
+        R:"Renewable / Convertible Term Assurance", I:"Immediate Annuity",
+        D:"Deferred Annuity", D2:"Decreasing Term Assurance"
+    }},
+
+    { topic: "Features of General Assets", acronym: "SYSTEM T", letters: {
+        S:"Security", Y:"Yield", S2:"Spread", T:"Term", E:"Expenses / exchange rate",
+        M:"Marketability", T2:"Tax"
+    }},
+
+    { topic: "Features of the investor", acronym: "TRAITOR", letters: {
+        T:"Tax position", R:"Regulation on investor", A:"Assets currently held",
+        I:"Income / cashflow considerations", T2:"Tastes", O:"Other assets and investors",
+        R2:"Risk appetite"
+    }},
+
+    { topic: "Reasons for holding cash", acronym: "POURS GRID", letters: {
+        P:"Protect monetary values", O:"Opportunities", U:"Uncertain liabilities",
+        R:"Recently received cashflows", S:"Short-term liabilities",
+        G:"General economic uncertainty", R2:"Recession expected",
+        I:"Interest rates expected to rise", D:"Depreciation of domestic currency"
+    }},
+
+    { topic: "Yield Curve Theories", acronym: "LIME", letters: {
+        L:"Liquidity preference", I:"Inflation risk premium",
+        M:"Market segmentation", E:"Expectations"
+    }},
+
+    { topic: "Prime Property Features", acronym: "CALL ST", letters: {
+        C:"Comparable properties", A:"Age / condition", L:"Location",
+        L2:"Lease structure", S:"Size", T:"Tenant quality"
+    }},
+
+    { topic: "Overseas Investments & Emerging Markets", acronym: "MTV CATERPILLAR", letters: {
+        M:"Mismatching domestic liabilities", T:"Tax", V:"Volatility of currency",
+        C:"Custodian needed", A:"Additional admin", T2:"Time delays",
+        E:"Expenses / expertise", R:"Regulation quality poorer",
+        P:"Political problems", I:"Information harder to obtain",
+        L:"Language barriers", L2:"Liquidity problems",
+        A2:"Accounting differences", R2:"Restrictions on foreign ownership"
+    }},
+
+    { topic: "Ways of Valuing Assets", acronym: "SHAM FADS", letters: {
+        S:"Smoothed market value", H:"Historic book value", A:"Adjusted book value",
+        M:"Market value", F:"Fair value", A2:"Arbitrage value",
+        D:"Discounted cashflow", S2:"Stochastic modelling"
+    }},
+
+    { topic: "Factors affecting investment strategy", acronym: "A SAD CUTER INVESTOR", letters: {
+        A:"Accounting regulation", S:"Size of assets", A2:"Accrual of future liabilities",
+        D:"Diversification", C:"Currency of liabilities", U:"Uncertainty of liabilities",
+        T:"Tax treatment", E:"Environmental/social/governance", R:"Risk appetite",
+        I:"Institution objectives", N:"Nature of liabilities", V:"Voluntary/legal restrictions",
+        E2:"Existing assets", S2:"Solvency requirements", T2:"Term of liabilities",
+        O:"Other funds’ strategies", R2:"Returns"
+    }},
+
+    { topic: "Regulatory influences on assets held", acronym: "TECH SCAM", letters: {
+        T:"Types of assets", E:"Extent of mismatching", C:"Currency matching",
+        H:"Hold certain assets", S:"Single counterparty limits", C2:"Custodianship",
+        A:"Amount of any one asset", M:"Mismatching reserve"
+    }},
+
+    { topic: "Model design: operational issues", acronym: "SCARCER FILES", letters: {
+        S:"Simple", C:"Clear results", A:"Adequately documented",
+        R:"Range of methods", C2:"Communicable workings", E:"Easy to understand",
+        R2:"Refinable", F:"Frequency of cashflows", I:"Independent verification",
+        L:"Length of run", E2:"Expense not too high", S2:"Sensible joint behaviour"
+    }},
+
+    { topic: "Considerations in assessing different models", acronym: "FENCED", letters: {
+        F:"Fit for purpose", E:"Expertise", N:"Need flexibility",
+        C:"Cost", E2:"Expected usage", D:"Desired accuracy"
+    }},
+
+    { topic: "Sources of data", acronym: "TRAINERS", letters: {
+        T:"Tables", R:"Reinsurers", A:"Abroad", I:"Industry data",
+        N:"National statistics", E:"Experience investigations",
+        R2:"Regulatory reports", S:"Similar contracts"
+    }},
+
+    { topic: "Potential issues when using data", acronym: "QUERIED", letters: {
+        Q:"Quantity", U:"Up to date?", E:"Errors", R:"Relevance",
+        I:"Incomplete?", E2:"Exceptionals", D:"Detail"
+    }},
+
+    { topic: "Factors to consider when setting assumptions", acronym: "LUNCH", letters: {
+        L:"Legislation / Regulation", U:"Use of the assumptions", N:"Needs of the client", C:"Consistency between assumptions", H:"How significant are they?"
+    }},
+
+    { topic: "Using past data to set future assumptions", acronym: "BEST ARCHER", letters: {
+        B:"Balance of heterogeneity may change", E:"Economic situation may change", S:"Social conditions may change",
+        T:"Trends over time (medical, demographic)", A:"Abnormal fluctuations", R:"Random fluctuations",
+        C:"Changes in regulation", H:"Heterogeneity within the group the assumption is applying", E2:"Errors in the past data", R2:"Recording differences"
+    }},
+
+    { topic: "Types of Selection", acronym: "STATIC", letters: {
+        S:"Spurious", T:"Time", A:"Adverse", T2:"Temporary", I:"Initial", C:"Class"
+    }},
+
+    { topic: "Contract design factors", acronym: "AMPLE DIRECT FACTORS", letters: {
+        A:"Administration", M:"Marketability", P:"Profitability", L:"Level of benefits",
+        E:"Early leaver benefits", D:"Discretionary benefits", I:"Interests of customers",
+        R:"Risk appetite", E2:"Expenses vs charges", C:"Competition",
+        T:"Terms", F:"Financing", A2:"Accounting", C2:"Consistency",
+        T2:"Timing", O:"Options", R2:"Regulatory", S:"Subsidies"
+    }},
+
+    { topic: "Expenses incurred by a product provider", acronym: "COST RAID", letters: {
+        C:"Commission", O:"Overheads", S:"Sales", T:"Terminal",
+        R:"Renewal admin", A:"Asset management", I:"Initial admin", D:"Design"
+    }},
+
+    { topic: "Benefits of a good risk management process", acronym: "SAVIOURS", letters: {
+        S:"Strategic decisions", A:"Avoid surprises", V:"Volatility reduced",
+        I:"Improve profits", O:"Opportunities", U:"Understand interdependencies",
+        R:"React quickly", S2:"Stakeholder confidence"
+    }},
+
+    { topic: "Identification of causes of risk in projects", acronym: "PNEFCPB", letters: {
+        P:"Political", N:"Natural", E:"Economic", F:"Financial",
+        C:"Crime", P2:"Project", B:"Business"
+    }},
+
+    { topic: "Inappropriate advice", acronym: "CRIMES", letters: {
+        C:"Complicated products", R:"Rubbish advisor", I:"Integrity lacking",
+        M:"Model unsuitable", E:"Errors in data", S:"State actions"
+    }},
+
+    { topic: "Additional criteria for an insurable risk", acronym: "MUDPIS", letters: {
+        M:"Moral hazard", U:"Ultimate limit", D:"Data exists",
+        P:"Pooling", I:"Independent events", S:"Small probability"
+    }},
+
+    { topic: "Risk Responses", acronym: "PIRATE", letters: {
+        P:"Partially transfer", I:"Ignore", R:"Reduce",
+        A:"Accept", T:"Transfer", E:"Evade"
+    }},
+
+    { topic: "Reasons for using reinsurance", acronym: "SAD LIFE", letters: {
+        S:"Smooth results", A:"Avoid losses", D:"Diversification",
+        L:"Limit exposure", I:"Increase capacity", F:"Financial assistance",
+        E:"Expertise"
+    }},
+
+    { topic: "Reasons for underwriting", acronym: "SAFARI", letters: {
+        S:"Suitable terms", A:"Avoid anti-selection", F:"Financial underwriting",
+        A2:"Actual experience", R:"Risk classification", I:"Identify substandard lives"
+    }},
+
+    { topic: "Reasons For Calculating Provisions", acronym: "BAD MEDICS", letters: {
+        B:"Benefit improvements", A:"Accounts", D:"Discontinuance",
+        M:"Mergers", E:"Excess assets", D2:"Disclosure",
+        I:"Investment strategy", C:"Contribution setting", S:"Statutory solvency"
+    }},
+
+    { topic: "Information to be disclosed to benefit scheme members", acronym: "SCRIBE", letters: {
+        S:"Strategy", C:"Contribution obligations", R:"Risks",
+        I:"Insolvency", B:"Benefits", E:"Expenses"
+    }},
+
+    { topic: "When benefits scheme information should be disclosed", acronym: "PRICE", letters: {
+        P:"Payment", R:"Request", I:"Intervals", C:"Combination", E:"Entry"
+    }},
+
+    { topic: "Reasons why disclosure is important", acronym: "SIMMERS", letters: {
+        S:"Sponsor aware", I:"Informed decisions", M:"Mis-selling avoided",
+        M2:"Manages expectations", E:"Encourages take-up", R:"Regulatory", S2:"Security improved"
+    }},
+
+    { topic: "Why financial providers need capital", acronym: "REG CUSHION", letters: {
+        R:"Regulatory", E:"Expenses", G:"Guarantees", C:"Cashflow",
+        U:"Unexpected events", S:"Smooth profit", H:"Help demonstrate strength",
+        I:"Investment freedom", O:"Opportunities", N:"New business strain"
+    }},
+
+    { topic: "Reasons for analysing surplus", acronym: "DIVERGENCE", letters: {
+        D:"Divergence", I:"Information", V:"Variances", E:"Experience monitoring",
+        R:"Reconcile", G:"Group", E2:"Executive remuneration", N:"New business strain",
+        C:"Check assumptions", E3:"Extra check"
+    }}
+
+];
+
+let current = null;
+
+function nextCard() {
+    current = acronyms[Math.floor(Math.random() * acronyms.length)];
+    document.getElementById("topic").innerHTML = `<h2>${current.topic}</h2>`;
+    const acronymDiv = document.getElementById("acronym");
+    acronymDiv.innerHTML = `<button class="btn" onclick="revealAcronym()">Reveal Acronym</button>`;
+    acronymDiv.classList.remove("hidden");
+    document.getElementById("letters").innerHTML = "";
+}
+
+function revealAcronym() {
+    const acronymDiv = document.getElementById("acronym");
+    acronymDiv.innerHTML = `<h2>${current.acronym}</h2>`;
+    const lettersDiv = document.getElementById("letters");
+    lettersDiv.innerHTML = "";
+
+    for (const key in current.letters) {
+        const span = document.createElement("span");
+        span.className = "acronym-letter";
+        span.textContent = key;
+        span.onclick = () => {
+            span.textContent = `${key} — ${current.letters[key]}`;
+            span.style.background = "#cce5ff";
+        };
+        lettersDiv.appendChild(span);
+    }
+}
+</script>
+
+</body>
+</html>
