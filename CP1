@@ -74,7 +74,7 @@ const acronyms = [
     }},
 
     { topic: "Reasons for holding cash", acronym: "POURS GRID", letters: {
-        P:"Protect monetary values", O:"Opportunities", U:"Uncertain liabilities",
+        P:"Protect monetary values", O:"Opportunities to take advantage of", U:"Uncertain liabilities",
         R:"Recently received cashflows", S:"Short-term liabilities",
         G:"General economic uncertainty", R2:"Recession expected",
         I:"Interest rates expected to rise", D:"Depreciation of domestic currency"
@@ -86,14 +86,14 @@ const acronyms = [
     }},
 
     { topic: "Prime Property Features", acronym: "CALL ST", letters: {
-        C:"Comparable properties", A:"Age / condition", L:"Location",
+        C:"Comparable properties for review", A:"Age / condition", L:"Location",
         L2:"Lease structure", S:"Size", T:"Tenant quality"
     }},
 
     { topic: "Overseas Investments & Emerging Markets", acronym: "MTV CATERPILLAR", letters: {
-        M:"Mismatching domestic liabilities", T:"Tax", V:"Volatility of currency",
-        C:"Custodian needed", A:"Additional admin", T2:"Time delays",
-        E:"Expenses / expertise", R:"Regulation quality poorer",
+        M:"Mismatching domestic liabilities", T:"Tax (unrecoverable)", V:"Volatility of currency",
+        C:"Custodian needed", A:"Additional admin required", T2:"Time delays",
+        E:"Expenses incurred / expertise needed", R:"Regulation differences or quality poorer",
         P:"Political problems", I:"Information harder to obtain",
         L:"Language barriers", L2:"Liquidity problems",
         A2:"Accounting differences", R2:"Restrictions on foreign ownership"
@@ -106,51 +106,51 @@ const acronyms = [
     }},
 
     { topic: "Factors affecting investment strategy", acronym: "A SAD CUTER INVESTOR", letters: {
-        A:"Accounting regulation", S:"Size of assets", A2:"Accrual of future liabilities",
+        A:"Accounting regulation", S:"Size of assets (absolute / relative)", A2:"Accrual of future liabilities",
         D:"Diversification", C:"Currency of liabilities", U:"Uncertainty of liabilities",
-        T:"Tax treatment", E:"Environmental/social/governance", R:"Risk appetite",
+        T:"Tax treatment of investor", E:"Environmental/social/governance issues", R:"Risk appetite",
         I:"Institution objectives", N:"Nature of liabilities", V:"Voluntary/legal restrictions",
         E2:"Existing assets", S2:"Solvency requirements", T2:"Term of liabilities",
-        O:"Other funds’ strategies", R2:"Returns"
+        O:"Other funds’ strategies", R2:"Returns, long term expectations"
     }},
 
     { topic: "Regulatory influences on assets held", acronym: "TECH SCAM", letters: {
-        T:"Types of assets", E:"Extent of mismatching", C:"Currency matching",
-        H:"Hold certain assets", S:"Single counterparty limits", C2:"Custodianship",
-        A:"Amount of any one asset", M:"Mismatching reserve"
+        T:"Types of assets can be invested in", E:"Extent of mismatching allowed", C:"Currency matching requirements",
+        H:"Hold certain assets, e.g. gov bonds", S:"Single counterparty limits", C2:"Custodianship",
+        A:"Amount of any one asset for solvency", M:"Mismatching reserve"
     }},
 
     { topic: "Model design: operational issues", acronym: "SCARCER FILES", letters: {
-        S:"Simple", C:"Clear results", A:"Adequately documented",
-        R:"Range of methods", C2:"Communicable workings", E:"Easy to understand",
-        R2:"Refinable", F:"Frequency of cashflows", I:"Independent verification",
-        L:"Length of run", E2:"Expense not too high", S2:"Sensible joint behaviour"
+        S:"Simple, retaining key features", C:"Clear results", A:"Adequately documented",
+        R:"Range of implementation methods", C2:"Communicable workings + outputs", E:"Easy to understand",
+        R2:"Refinable + developable", F:"Frequency of cashflows appropriate", I:"Independent verification",
+        L:"Length of run", E2:"Expense not too high", S2:"Sensible joint variable behaviour"
     }},
 
     { topic: "Considerations in assessing different models", acronym: "FENCED", letters: {
-        F:"Fit for purpose", E:"Expertise", N:"Need flexibility",
-        C:"Cost", E2:"Expected usage", D:"Desired accuracy"
+        F:"Fit for purpose", E:"Expertise available in house", N:"Need flexibility",
+        C:"Cost of each option", E2:"Expected usage", D:"Desired accuracy"
     }},
 
     { topic: "Sources of data", acronym: "TRAINERS", letters: {
         T:"Tables", R:"Reinsurers", A:"Abroad", I:"Industry data",
         N:"National statistics", E:"Experience investigations",
-        R2:"Regulatory reports", S:"Similar contracts"
+        R2:"Regulatory + company reports", S:"Similar contracts"
     }},
 
     { topic: "Potential issues when using data", acronym: "QUERIED", letters: {
-        Q:"Quantity", U:"Up to date?", E:"Errors", R:"Relevance",
-        I:"Incomplete?", E2:"Exceptionals", D:"Detail"
+        Q:"Quantity (credibility)", U:"Up to date?", E:"Errors", R:"Relevance, heterogeneity",
+        I:"Incomplete?", E2:"Exceptionals", D:"Detail + format"
     }},
 
     { topic: "Factors to consider when setting assumptions", acronym: "LUNCH", letters: {
-        L:"Legislation / Regulation", U:"Use of the assumptions", N:"Needs of the client", C:"Consistency between assumptions", H:"How significant are they?"
+        L:"Legislation / Regulation", U:"Use of the assumptions", N:"Needs of the client", C:"Consistency between assumptions", H:"How financially significant are they?"
     }},
 
     { topic: "Using past data to set future assumptions", acronym: "BEST ARCHER", letters: {
         B:"Balance of heterogeneity may change", E:"Economic situation may change", S:"Social conditions may change",
         T:"Trends over time (medical, demographic)", A:"Abnormal fluctuations", R:"Random fluctuations",
-        C:"Changes in regulation", H:"Heterogeneity within the group the assumption is applying", E2:"Errors in the past data", R2:"Recording differences"
+        C:"Changes in regulation", H:"Heterogeneity within the group the assumption is applying", E2:"Errors in the past data", R2:"Recording differences, e.g. smoker status"
     }},
 
     { topic: "Types of Selection", acronym: "STATIC", letters: {
@@ -158,85 +158,85 @@ const acronyms = [
     }},
 
     { topic: "Contract design factors", acronym: "AMPLE DIRECT FACTORS", letters: {
-        A:"Administration", M:"Marketability", P:"Profitability", L:"Level of benefits",
+        A:"Administration", M:"Marketability", P:"Profitability", L:"Level and form of benefits",
         E:"Early leaver benefits", D:"Discretionary benefits", I:"Interests of customers",
-        R:"Risk appetite", E2:"Expenses vs charges", C:"Competition",
-        T:"Terms", F:"Financing", A2:"Accounting", C2:"Consistency",
-        T2:"Timing", O:"Options", R2:"Regulatory", S:"Subsidies"
+        R:"Risk appetite of those involved", E2:"Expenses vs charges", C:"Competition",
+        T:"Terms and conditions of contract", F:"Financing capital requirements", A2:"Accounting implications", C2:"Consistency with other products",
+        T2:"Timing of contributions", O:"Options + guarantees", R2:"Regulatory requirements", S:"Subsidies (cross)"
     }},
 
     { topic: "Expenses incurred by a product provider", acronym: "COST RAID", letters: {
-        C:"Commission", O:"Overheads", S:"Sales", T:"Terminal",
-        R:"Renewal admin", A:"Asset management", I:"Initial admin", D:"Design"
+        C:"Commission", O:"Overheads", S:"Sales / Advertising", T:"Terminal (paying benefits)",
+        R:"Renewal admin", A:"Asset management", I:"Initial admin", D:"Design of contract"
     }},
 
     { topic: "Benefits of a good risk management process", acronym: "SAVIOURS", letters: {
-        S:"Strategic decisions", A:"Avoid surprises", V:"Volatility reduced",
-        I:"Improve profits", O:"Opportunities", U:"Understand interdependencies",
-        R:"React quickly", S2:"Stakeholder confidence"
+        S:"Strategic decision making improved", A:"Avoid surprises", V:"Volatility of profits reduced",
+        I:"Improve profits via capital efficiency", O:"Opportunities exploited for profit", U:"Understand interdependencies",
+        R:"React quickly to opportunities", S2:"Stakeholders given confidence"
     }},
 
     { topic: "Identification of causes of risk in projects", acronym: "PNEFCPB", letters: {
-        P:"Political", N:"Natural", E:"Economic", F:"Financial",
-        C:"Crime", P2:"Project", B:"Business"
+        P:"Preston - Political", N:"North - Natural", E:"End - Economic", F:"Football - Financial",
+        C:"Club - Crime", P2:"Plays - Project", B:"Badly - Business"
     }},
 
     { topic: "Inappropriate advice", acronym: "CRIMES", letters: {
-        C:"Complicated products", R:"Rubbish advisor", I:"Integrity lacking",
-        M:"Model unsuitable", E:"Errors in data", S:"State actions"
+        C:"Complicated products", R:"Rubbish, incompetant advisor", I:"Integrity of advisor lacking",
+        M:"Model or parameter unsuitable", E:"Errors in data for beneficiary", S:"State encouraged by inappropriate actions"
     }},
 
     { topic: "Additional criteria for an insurable risk", acronym: "MUDPIS", letters: {
-        M:"Moral hazard", U:"Ultimate limit", D:"Data exists",
-        P:"Pooling", I:"Independent events", S:"Small probability"
+        M:"Moral hazard avoided", U:"Ultimate limit on liabilities", D:"Data exists to price risk?",
+        P:"Pooling large number of similar risks", I:"Independent risk events", S:"Small probability of occurance"
     }},
 
     { topic: "Risk Responses", acronym: "PIRATE", letters: {
         P:"Partially transfer", I:"Ignore", R:"Reduce",
-        A:"Accept", T:"Transfer", E:"Evade"
+        A:"Accept (retain)", T:"Transfer", E:"Evade (avoid)"
     }},
 
     { topic: "Reasons for using reinsurance", acronym: "SAD LIFE", letters: {
-        S:"Smooth results", A:"Avoid losses", D:"Diversification",
-        L:"Limit exposure", I:"Increase capacity", F:"Financial assistance",
+        S:"Smooth results", A:"Avoid large losses", D:"Diversification",
+        L:"Limit exposure to risks", I:"Increase capacity to accept risk", F:"Financial assistance",
         E:"Expertise"
     }},
 
     { topic: "Reasons for underwriting", acronym: "SAFARI", letters: {
-        S:"Suitable terms", A:"Avoid anti-selection", F:"Financial underwriting",
-        A2:"Actual experience", R:"Risk classification", I:"Identify substandard lives"
+        S:"Suitable special terms", A:"Avoid anti-selection", F:"Financial underwriting against overinsurance",
+        A2:"Actual experience in line with assumed", R:"Risk classification rated fairly", I:"Identify substandard lives"
     }},
 
     { topic: "Reasons For Calculating Provisions", acronym: "BAD MEDICS", letters: {
-        B:"Benefit improvements", A:"Accounts", D:"Discontinuance",
-        M:"Mergers", E:"Excess assets", D2:"Disclosure",
-        I:"Investment strategy", C:"Contribution setting", S:"Statutory solvency"
+        B:"Benefit improvements for scheme", A:"Accounts and reporting", D:"Discontinuance + surrender benefit",
+        M:"Mergers + acquasitions", E:"Excess assets over liabilities", D2:"Disclosure info for beneficiaries",
+        I:"Investment strategy", C:"Contribution setting", S:"Statutory solvency reports"
     }},
 
     { topic: "Information to be disclosed to benefit scheme members", acronym: "SCRIBE", letters: {
-        S:"Strategy", C:"Contribution obligations", R:"Risks",
-        I:"Insolvency", B:"Benefits", E:"Expenses"
+        S:"Strategy for investment", C:"Contribution obligations", R:"Risks involved",
+        I:"Insolvency entitlement", B:"Benefit entitlements", E:"Expenses charged"
     }},
 
     { topic: "When benefits scheme information should be disclosed", acronym: "PRICE", letters: {
-        P:"Payment", R:"Request", I:"Intervals", C:"Combination", E:"Entry"
+        P:"Payment commencement", R:"Request", I:"Intervals", C:"Combination", E:"Entry"
     }},
 
     { topic: "Reasons why disclosure is important", acronym: "SIMMERS", letters: {
-        S:"Sponsor aware", I:"Informed decisions", M:"Mis-selling avoided",
-        M2:"Manages expectations", E:"Encourages take-up", R:"Regulatory", S2:"Security improved"
+        S:"Sponsor aware of financially significant benefits", I:"Informed decisions possible", M:"Mis-selling avoided",
+        M2:"Manages expectations of members", E:"Encourages take-up", R:"Regulatory requirements", S2:"Security improved as greater accountability"
     }},
 
     { topic: "Why financial providers need capital", acronym: "REG CUSHION", letters: {
-        R:"Regulatory", E:"Expenses", G:"Guarantees", C:"Cashflow",
-        U:"Unexpected events", S:"Smooth profit", H:"Help demonstrate strength",
-        I:"Investment freedom", O:"Opportunities", N:"New business strain"
+        R:"Regulatory requirement to demonstrate solvency", E:"Expenses for launching new product", G:"Guarantees offered", C:"Cashflow timing management",
+        U:"Unexpected event cushion", S:"Smooth profit", H:"Help demonstrate financial strength",
+        I:"Investment freedom to mismatch for higher return", O:"Opportunities - mergers / acquasitions", N:"New business strain financing"
     }},
 
     { topic: "Reasons for analysing surplus", acronym: "DIVERGENCE", letters: {
-        D:"Divergence", I:"Information", V:"Variances", E:"Experience monitoring",
-        R:"Reconcile", G:"Group", E2:"Executive remuneration", N:"New business strain",
-        C:"Check assumptions", E3:"Extra check"
+        D:"Divergence of AvE", I:"Information to management", V:"Variances of whole = vairances of sum of parts", E:"Experience monitoring to feedback to ACC",
+        R:"Reconcile values for successive years", G:"Group into one-off / recurring sources of surplus", E2:"Executive remuneration schemes (data for)", N:"New business strain (show effects)",
+        C:"Check on valuation assumptions/calculations", E3:"Extra check on valuation data/process"
     }}
 
 ];
